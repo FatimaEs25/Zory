@@ -119,7 +119,7 @@
             <form id="formAsistencia">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" required>
-                <label for="cantidad">Número :</label>
+                <label for="cantidad">Número de asistentes:</label>
                 <input type="number" id="cantidad" min="1" required>
                 <button type="submit">Enviar</button>
             </form>
@@ -152,7 +152,7 @@
                 const nombre = document.getElementById("nombre").value;
                 const cantidad = document.getElementById("cantidad").value;
                 
-                fetch("https://script.google.com/macros/s/AKfycbwzHrlK-0YrLkDkHfLxATyZl8PGn3wwJhe5Ec2s8tgohW5ilpY_Myxk9mmFDM8UF_Z1/exec", {
+                fetch("https://script.google.com/macros/s/AKfycbx1C7X6id7aC7gc4_7Tne_j0hJUBUYumZj69gZwPlol6o7iViw-9tOYCK4rGXY0PNJ8/exec", {
     method: "POST",
     mode: "cors",
     headers: {
