@@ -121,7 +121,7 @@
                 <input type="text" id="nombre" required>
                 <label for="cantidad">Número de asistentes:</label>
                 <input type="number" id="cantidad" min="1" required>
-                <button type="submit">Enviar</button>
+                <button type="submit">Enviar Asistencia</button>
             </form>
         </div>
     </div>
@@ -152,24 +152,24 @@
                 const nombre = document.getElementById("nombre").value;
                 const cantidad = document.getElementById("cantidad").value;
                 
-                fetch("https://script.google.com/macros/s/AKfycbwmtm8ZFttt02u2Tv2rQCD_7ODeMOAAeGUuTwzosO4MJP7DPgCD8RUsdtNPLpH5M5Zs/exec", {
+                fetch("https://script.google.com/macros/s/AKfycbzu6rdoPcoWQEK8tkzleTKq6Jb77qFLLorC_QxsLbRV9lREscSGH7Gz1tA3PINJWJZa/exec", {
     method: "POST",
-    mode: "cors",
+    mode: "no-cors",  // Evita el error de CORS
     headers: {
         "Content-Type": "application/json"
     },
     body: JSON.stringify({ nombre, cantidad })
 })
-                .then(response => response.text())
-                .then(data => {
-                    alert("¡Asistencia confirmada!");
-                    modal.style.display = "none";
-                    form.reset();
-                })
-                .catch(error => {
-                    alert("Error al enviar la confirmación");
-                    console.error("Error:", error);
-                });
+.then(() => {
+    alert("¡Asistencia confirmada!");
+    modal.style.display = "none";
+    form.reset();
+})
+.catch(error => {
+    alert("Error al enviar la confirmación");
+    console.error("Error:", error);
+});
+
             };
         });
     </script>
