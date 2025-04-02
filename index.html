@@ -149,10 +149,10 @@
 
             form.onsubmit = function(event) {
                 event.preventDefault();
-                const nombre = document.getElementById("nombre").value;
-                const cantidad = document.getElementById("cantidad").value;
+                const nombre = document.getElementById("nombre:").value;
+                const cantidad = document.getElementById("cantidad:").value;
                 
-                fetch("https://script.google.com/macros/s/AKfycbzaWzoXgHqqCo-ssGMnpWDKO6vC3uxP2zZsW2vW4EZ1zoYFk5-fLgb3ZMC-A_3hFzwY/exec", {
+                fetch("https://script.google.com/macros/s/AKfycbwmtm8ZFttt02u2Tv2rQCD_7ODeMOAAeGUuTwzosO4MJP7DPgCD8RUsdtNPLpH5M5Zs/exec", {
     method: "POST",
     mode: "cors",
     headers: {
