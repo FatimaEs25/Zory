@@ -152,23 +152,19 @@
                 const nombre = document.getElementById("nombre").value;
                 const cantidad = document.getElementById("cantidad").value;
                 
-                fetch("https://script.google.com/macros/s/AKfycbzu6rdoPcoWQEK8tkzleTKq6Jb77qFLLorC_QxsLbRV9lREscSGH7Gz1tA3PINJWJZa/exec", {
+                fetch("https://script.google.com/macros/s/AKfycbzrXPawivzgM2ZG594EwTnvTzKy0piYbzbp6MSKS75_SKEmSYoZDpedZZaKqp6cliCz/exec", {
     method: "POST",
-    mode: "no-cors",  // Evita el error de CORS
+    mode: "cors", // Cambiado para ver errores
     headers: {
         "Content-Type": "application/json"
     },
     body: JSON.stringify({ nombre, cantidad })
 })
-.then(() => {
-    alert("¡Asistencia confirmada!");
-    modal.style.display = "none";
-    form.reset();
-})
-.catch(error => {
-    alert("Error al enviar la confirmación");
-    console.error("Error:", error);
-});
+.then(response => response.json()) // Si da error, Google Apps Script no está procesando bien los datos
+.then(data => console.log("Respuesta del servidor:", data))
+.catch(error => console.error("Error en fetch:", error));
+
+
 
             };
         });
