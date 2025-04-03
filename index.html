@@ -121,7 +121,7 @@
                 <input type="text" id="nombre" required>
                 <label for="cantidad">Número de asistentes:</label>
                 <input type="number" id="cantidad" min="1" required>
-                <button type="submit">Enviar Asistencia</button>
+                <button type="submit">Asistencia</button>
             </form>
         </div>
     </div>
@@ -152,17 +152,21 @@
                 const nombre = document.getElementById("nombre").value;
                 const cantidad = document.getElementById("cantidad").value;
                 
-                fetch("https://script.google.com/macros/s/AKfycbzrXPawivzgM2ZG594EwTnvTzKy0piYbzbp6MSKS75_SKEmSYoZDpedZZaKqp6cliCz/exec", {
+                fetch("https://script.google.com/macros/s/TU-NUEVA-URL/exec", {
     method: "POST",
-    mode: "cors", // Cambiado para ver errores
+    mode: "cors", // Permite recibir respuesta visible en el navegador
     headers: {
         "Content-Type": "application/json"
     },
     body: JSON.stringify({ nombre, cantidad })
 })
-.then(response => response.json()) // Si da error, Google Apps Script no está procesando bien los datos
-.then(data => console.log("Respuesta del servidor:", data))
+.then(response => response.json())
+.then(data => {
+    console.log("Respuesta del servidor:", data);
+    alert("¡Asistencia confirmada!");
+})
 .catch(error => console.error("Error en fetch:", error));
+
 
 
 
