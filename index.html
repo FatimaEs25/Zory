@@ -102,7 +102,7 @@
         <div class="contador" id="contador"></div>
         <p><strong>Lugar:</strong> Salón de eventos Fiesta Grande</p>
         <a href="https://maps.google.com" target="_blank">
-            <button>Ver en Google Maps</button>
+            <button>Ver en Maps</button>
         </a>
         <div class="imagenes">
             <img src="lugar1.jpg" alt="Imagen del lugar">
@@ -152,9 +152,9 @@
                 const nombre = document.getElementById("nombre").value;
                 const cantidad = document.getElementById("cantidad").value;
                 
-                fetch("https://script.google.com/macros/s/AKfycbzQwmrxuYTHcKjv0-W6kNdjgPQZlWMgTpW7TnNJCS2M7CPlCF6nOyFrOUxTe-BuAakW/exec", {
+                fetch("https://script.google.com/macros/s/AKfycbzxPGEr27AyeLaJ-njf1C76jBGTvrIDQmhnC2N8HSwujroBSh4oKYCBWJ8lKcTU5Ww0/exec", {
     method: "POST",
-    mode: "cors", // Permite recibir respuesta visible en el navegador
+    mode: "cors",
     headers: {
         "Content-Type": "application/json"
     },
@@ -166,6 +166,7 @@
     alert("¡Asistencia confirmada!");
 })
 .catch(error => console.error("Error en fetch:", error));
+
 
 
 
