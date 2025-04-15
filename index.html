@@ -169,21 +169,23 @@
     <img src="zory.png" alt="Cumple Zory" width="250">
     <h1>Cumpleaños de Zory</h1>
     <p>Acompañame a celebrar mis 45 años con una callejoneada</p>
-    <p>Este 09 de Mayo del 2025 a las 8:00 pm</p>
+    <p>Este 09 de Mayo del 2025</p>
+   
 
     <div class="seccion">
-        <h2>Faltan</h2>
+        <h2>7:00 pm</h2>
         <div id="contador" style="font-size: 45px; font-weight: bold;"></div>
       </div>
       
    
     <!-- Sección: Punto de encuentro-->
      <div class="seccion">
-        <button onclick="window.open('')">
+        <button onclick="window.open('https://maps.app.goo.gl/17RfkduzUQJwL1oeA')">
             <i class="fas fa-map-pin"></i> Punto de encuentro
         </button>
-        <img src="https://via.placeholder.com/300x200?text=Punto+de+Encuentro" alt="Punto de Encuentro">
-         </div>
+        <img src="Alameda.jpg" alt="Punto de Encuentro">
+       <p>Alameda Trinidad García de la Cadena</p> 
+    </div>
 <!-- Sección: Ver Recorrido -->
 <div class="seccion">
     <button onclick="window.open('https://maps.google.com/?q=recorrido-fiesta', '_blank')">
@@ -194,10 +196,11 @@
 
   <!-- Sección: Cena -->
   <div class="seccion">
-    <button>
+    <button onclick="window.open('https://maps.app.goo.gl/qtD1RDJHP3BH1mg8A')">
       <i class="fas fa-utensils"></i> Cena
     </button>
-    <img src="https://via.placeholder.com/300x200?text=Cena" alt="Cena">
+    <img src="plazuela.webp" alt="Cena">
+    <p>Plazuela de García</p>
   </div>
         <div class="seccion">
          <button id="btnConfirmar">Confirmar Asistencia</button>
@@ -270,7 +273,7 @@
       };
    // Cuenta regresiva
 const contador = document.getElementById("contador");
-const fechaEvento = new Date("2025-05-09T20:20:00"); // Reemplaza con tu fecha y hora
+const fechaEvento = new Date("2025-05-09T20:19:00"); // Reemplaza con tu fecha y hora
 
 function actualizarContador() {
   const ahora = new Date();
