@@ -8,6 +8,10 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-D7DHFZlDJkT7RXXc6Ah0uKXb5LmNd1DxibqkNsMMRMc3U4yA5az3R8U1EZH+T2k3hFUw7B+pjVb6AO9EpYZFAQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
 
 
   <style>
@@ -190,15 +194,46 @@
   transform: scale(1.1);
 
 }
+  .titulo-elegante {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .moderna {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+  }
+
+  .invitacione {
+    font-family: 'Poppins', sans-serif;
+    background: rgba(241, 244, 249, 0.5);
+      padding: 30px;
+      border-radius: 30px;
+      text-align: center;
+      max-width: 90%;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+     animation: slideUp 3s ease-out;
+    font-size: 20px;
+  }
+  .invitaciones {
+    font-family: 'Poppins', sans-serif;
+    
+      padding: 3px;
+      border-radius: 24px;
+      text-align: center;
+      max-width: 1000%;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+     animation: slideUp 3s ease-out;
+    font-size: 15px;
+  }
 
   </style>
 </head>
 <body>
   <div class="invitacion">
     <img src="zory.png" alt="Cumple Zory" width="250">
-    <h1>Cumpleaños de Zory</h1>
-    <p>Acompañame a celebrar mis 45 años con una callejoneada</p>
-    <p>Este 09 de Mayo del 2025</p>
+    <h1 class="moderna"> Cumpleaños de Zory</h1>
+    <p class="invitacione">Acompañame a celebrar mis 45 años con una callejoneada</p>
+    <p class="moderna">Este 09 de Mayo del 2025</p>
    
 
     <div class="seccion">
@@ -214,7 +249,7 @@
       </button>
       <p>Punto de encuentro</p>
       <img src="alameda.jpg" alt="Punto de Encuentro">
-      <p>Alameda Trinidad García de la Cadena</p>
+      <p class="invitaciones">Alameda Trinidad García de la Cadena</p>
     </div>
     
 <!-- Sección: Ver Recorrido -->
@@ -233,7 +268,7 @@
     </button>
     <p>Cena</p>
     <img src="plazuela.webp" alt="Cena">
-    <p>Plazuela de García</p>
+    <p class="invitaciones">Plazuela de García</p>
   </div>
         <div class="seccion">
          <button class="boton-icono" id="btnConfirmar">
