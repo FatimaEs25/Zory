@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cumpleaños Zory</title>
 
-  <script src="https://kit.fontawesome.com/6bcb32e5a8.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-D7DHFZlDJkT7RXXc6Ah0uKXb5LmNd1DxibqkNsMMRMc3U4yA5az3R8U1EZH+T2k3hFUw7B+pjVb6AO9EpYZFAQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 
   <style>
     body {
@@ -42,6 +45,7 @@
 
     .seccion {
       margin-top: 20px;
+      text-align: center;
     }
 
     .seccion button {
@@ -161,7 +165,32 @@
   font-size: 24px;
   cursor: pointer;
 }
-    
+.boton-icono {
+  width: 60px !important;
+  height: 60px !important;
+  background-color: #007bff;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+  margin: 0 auto 10px auto;
+
+  /* Evita herencia conflictiva */
+  padding: 0 !important;
+  min-width: unset !important;
+}
+
+.boton-icono:hover {
+  transform: scale(1.1);
+
+}
+
   </style>
 </head>
 <body>
@@ -179,31 +208,39 @@
       
    
     <!-- Sección: Punto de encuentro-->
-     <div class="seccion">
-        <button onclick="window.open('https://maps.app.goo.gl/17RfkduzUQJwL1oeA')">
-            <i class="fas fa-map-pin"></i> Punto de encuentro
-        </button>
-        <img src="alameda.jpg" alt="Punto de Encuentro">
-       <p>Alameda Trinidad García de la Cadena</p> 
+    <div class="seccion">
+      <button class="boton-icono" onclick="window.open('https://maps.app.goo.gl/17RfkduzUQJwL1oeA', '_blank')">
+        <i class="fas fa-map-marker-alt"></i>
+      </button>
+      <p>Punto de encuentro</p>
+      <img src="alameda.jpg" alt="Punto de Encuentro">
+      <p>Alameda Trinidad García de la Cadena</p>
     </div>
+    
 <!-- Sección: Ver Recorrido -->
 <div class="seccion">
-    <button onclick="window.open('https://maps.google.com/?q=recorrido-fiesta', '_blank')">
-      <i class="fas fa-route"></i> Ver Recorrido
+    <button class="boton-icono" onclick="window.open('https://maps.google.com/?q=recorrido-fiesta', '_blank')">
+      <i class="fas fa-route"></i> 
     </button>
+    <p>Ver recorrido</p>
     <img src="https://via.placeholder.com/300x200?text=Recorrido+Fiesta" alt="Recorrido Fiesta">
   </div>
 
   <!-- Sección: Cena -->
   <div class="seccion">
-    <button onclick="window.open('https://maps.app.goo.gl/qtD1RDJHP3BH1mg8A')">
-      <i class="fas fa-utensils"></i> Cena
+    <button class="boton-icono" onclick="window.open('https://maps.app.goo.gl/qtD1RDJHP3BH1mg8A')">
+      <i class="fas fa-utensils"></i> 
     </button>
+    <p>Cena</p>
     <img src="plazuela.webp" alt="Cena">
     <p>Plazuela de García</p>
   </div>
         <div class="seccion">
-         <button id="btnConfirmar">Confirmar Asistencia</button>
+         <button class="boton-icono" id="btnConfirmar">
+          <i class="fa-solid fa-check"></i>
+                   </button>
+         
+         <p>Confirmar asistencia</p>
         </div>
   </div>
 
@@ -217,7 +254,9 @@
         <input type="text" id="nombre" required>
         <label for="cantidad">Número de asistentes:</label>
         <input type="number" id="cantidad" min="1" required>
-        <button type="submit">Asistencia</button>
+        <button class="boton-icono" type="submit">
+          <i class="fa-solid fa-check"></i>
+        </button>
       </form>
     </div>
   </div>
