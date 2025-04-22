@@ -257,6 +257,10 @@
         <button class="boton-icono" type="submit">
           <i class="fa-solid fa-check"></i>
         </button>
+        <div id="spinner" style="display: none; text-align: center; margin-top: 10px;">
+          <i class="fas fa-circle-notch fa-spin" style="font-size: 24px; color: #0074D9;"></i>
+        </div>
+        
       </form>
     </div>
   </div>
@@ -283,33 +287,46 @@
       };
 
       form.onsubmit = function (event) {
-        event.preventDefault();
-        const nombre = document.getElementById("nombre").value;
-        const cantidad = document.getElementById("cantidad").value;
+  event.preventDefault();
 
-        fetch("https://sheetdb.io/api/v1/afrxbori5rytj", {  // 👈 Reemplaza con tu URL
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            data: {
-              nombre: nombre,
-              cantidad: cantidad
-            }
-          })
-        })
-        .then(response => response.json())
-        .then(data => {
-          alert("¡Asistencia confirmada!");
-          modal.style.display = "none";
-          form.reset();
-        })
-        .catch(error => {
-          console.error("Error al guardar:", error);
-          alert("Error al guardar la asistencia.");
-        });
-      };
+  const nombre = document.getElementById("nombre").value;
+  const cantidad = document.getElementById("cantidad").value;
+  const spinner = document.getElementById("spinner");
+  const submitBtn = form.querySelector("button");
+
+  // Mostrar spinner y deshabilitar el botón
+  spinner.style.display = "block";
+  submitBtn.disabled = true;
+
+  fetch("https://sheetdb.io/api/v1/afrxbori5rytj", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      data: {
+        nombre: nombre,
+        cantidad: cantidad
+      }
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    alert("¡Asistencia confirmada!");
+    modal.style.display = "none";
+    form.reset();
+  })
+  .catch(error => {
+    console.error("Error al guardar:", error);
+    alert("Error al guardar la asistencia.");
+  })
+  .finally(() => {
+    // Ocultar spinner y reactivar botón
+    spinner.style.display = "none";
+    submitBtn.disabled = false;
+  });
+};
+
    // Cuenta regresiva
 const contador = document.getElementById("contador");
 const fechaEvento = new Date("2025-05-09T20:19:00"); // Reemplaza con tu fecha y hora
